@@ -89,7 +89,7 @@ class Reserve():
         if output != {}:
             ats = ["[CQ:at,qq="+qq+"]" for qq in output]
             self.txt_list.append(" ".join(ats))
-            del self._data[self._groupid][boss]
+            del self._data[self._groupid][(boss-1)%5]
             self._save()
 
     def _canc_res(self, boss):
